@@ -40,10 +40,10 @@ public class Operation {
 	private static void delete() {
 		System.out.println("Enter AdharNumber");
 		String adhar = sc.next();
-		
-		if(map.containsKey(adhar)) {
+
+		if (map.containsKey(adhar)) {
 			map.remove(adhar);
-		}else {
+		} else {
 			System.out.println("Sorry, we could not find this patient");
 		}
 
@@ -52,8 +52,8 @@ public class Operation {
 	private static void update() {
 		System.out.println("Enter adharId");
 		String adhar = sc.next();
-		
-		if(!map.isEmpty()) {
+
+		if (!map.isEmpty()) {
 			PatientDetails p = map.get(adhar);
 			System.out.println("Enter the status");
 			char status = sc.next().charAt(0);
@@ -63,9 +63,7 @@ public class Operation {
 	}
 
 	private static void add() {
-		System.out.println("*****Enter Patient Details******");
-
-		System.out.println();
+		System.out.println("**********Enter Patient Details**********");
 
 		System.out.println("Enter Patient AdharNumber");
 		String adhar = sc.next();
@@ -80,23 +78,28 @@ public class Operation {
 		String city = sc.next();
 
 		System.out.println("Enter Pin");
-		int pin = sc.nextInt();
+		int pin = 0;
+		try {
+			pin = sc.nextInt();
+		} catch (Exception e) {
+			System.out.println("Wrong Pin");
+		}
 
-		System.out.println("Enter Status 'P' for Po sitive, 'R' for Recoverd, 'D' for Deceived");
+		System.out.println("Enter Status 'P' for Positive, 'R' for Recoverd, 'D' for Deceived");
 		char status = sc.next().charAt(0);
 		status = Character.toUpperCase(status);
-		if(!(status == 'P'||status == 'C'||status == 'D')) {
-			while(!(status == 'P'||status == 'C'||status == 'D')) {
+		if (!(status == 'P' || status == 'C' || status == 'D')) {
+			while (!(status == 'P' || status == 'C' || status == 'D')) {
 				System.out.println("Invalid status, please try again");
 				status = sc.next().charAt(0);
 				status = Character.toUpperCase(status);
 			}
-			
+
 		}
 
 		PatientDetails p = new PatientDetails(adhar, Name, state, city, pin, status);
 
-		map.put(adhar,p);
+		map.put(adhar, p);
 	}
 
 }
