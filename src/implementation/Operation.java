@@ -42,6 +42,7 @@ public class Operation {
 		String adhar = sc.next();
 
 		if (map.containsKey(adhar)) {
+			System.out.println("Patient Details "+map.get(adhar)+" has been removed");
 			map.remove(adhar);
 		} else {
 			System.out.println("Sorry, we could not find this patient");
@@ -59,6 +60,8 @@ public class Operation {
 			char status = sc.next().charAt(0);
 			p.setStatus(status);
 			System.out.println(p);
+		}else {
+			System.out.println("Sorry, we could not find this patient");
 		}
 	}
 
@@ -98,6 +101,8 @@ public class Operation {
 		}
 
 		PatientDetails p = new PatientDetails(adhar, Name, state, city, pin, status);
+		System.out.println("Patient added succesfully");
+	//	System.out.println();
 
 		map.put(adhar, p);
 	}
