@@ -7,6 +7,8 @@ public class PatientDetails {
 	private String city;
 	private int pinCode;
 	private char status;
+	String newline = System.lineSeparator();
+
 
 	public void setStatus(char status) {
 		this.status = status;
@@ -23,7 +25,7 @@ public class PatientDetails {
 
 	@Override
 	public String toString() {
-		return String.format(name + " " + adharId + " " + city + " " + status + " " + state + " " + pinCode);
+		return String.format("Adhar Number :"+ adharId+newline+"Name :"+name +newline+"City :"+ city+newline+"State :"+state+newline+"Status :" +status+newline+"Pin Code :"+ pinCode);
 	}
 
 }
