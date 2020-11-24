@@ -10,8 +10,8 @@ public class Operation {
 
 	public static void main(String[] args) {
 		System.out.println("1.Add");
-		System.out.println("2.update");
-		System.out.println("3.delete");
+		System.out.println("2.Update");
+		System.out.println("3.Search");
 
 		int choice = sc.nextInt();
 
@@ -19,31 +19,46 @@ public class Operation {
 			switch (choice) {
 			case 1:
 				add();
+				System.out.println("1.Add");
+				System.out.println("2.Update");
+				System.out.println("3.Search");
 				choice = sc.nextInt();
 				break;
 			case 2:
 				update();
+				System.out.println("1.Add");
+				System.out.println("2.Update");
+				System.out.println("3.Search");
 				choice = sc.nextInt();
 				break;
 			case 3:
-				delete();
+				search();
+				System.out.println("1.Add");
+				System.out.println("2.Update");
+				System.out.println("3.Search");
 				choice = sc.nextInt();
 				break;
 			default:
 				System.out.println("Enter valid choice");
+				System.out.println("1.Add");
+				System.out.println("2.Update");
+				System.out.println("3.Search");
+				choice = sc.nextInt();
+				break;
 			}
 
 		} while (choice != 0);
 
 	}
 
-	private static void delete() {
+	private static void search() {
 		System.out.println("Enter AdharNumber");
 		String adhar = sc.next();
 
 		if (map.containsKey(adhar)) {
-			System.out.println("Patient Details "+map.get(adhar)+" has been removed");
-			map.remove(adhar);
+			PatientDetails p = map.get(adhar);
+			System.out.println(p);
+			
 		} else {
 			System.out.println("Sorry, we could not find this patient");
 		}
@@ -91,8 +106,8 @@ public class Operation {
 		System.out.println("Enter Status 'P' for Positive, 'R' for Recoverd, 'D' for Deceived");
 		char status = sc.next().charAt(0);
 		status = Character.toUpperCase(status);
-		if (!(status == 'P' || status == 'C' || status == 'D')) {
-			while (!(status == 'P' || status == 'C' || status == 'D')) {
+		if (!(status == 'P' || status == 'R' || status == 'D')) {
+			while (!(status == 'P' || status == 'R' || status == 'D')) {
 				System.out.println("Invalid status, please try again");
 				status = sc.next().charAt(0);
 				status = Character.toUpperCase(status);
