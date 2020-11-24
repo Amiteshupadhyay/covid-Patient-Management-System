@@ -13,6 +13,10 @@ public class PatientDetails {
 	public void setStatus(char status) {
 		this.status = status;
 	}
+	
+	PatientDetails(){
+		
+	}
 
 	PatientDetails(String adhar, String name, String state, String city, int pin, char status) {
 		this.adharId = adhar;
