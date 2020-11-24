@@ -25,7 +25,7 @@ public class PatientDetails {
 
 	@Override
 	public String toString() {
-		return String.format("Adhar Number :"+ adharId+newline+"Name :"+name +newline+"City :"+ city+newline+"State :"+state+newline+"Status :" +status+newline+"Pin Code :"+ pinCode);
+		return String.format("Adhar Number: "+ adharId+newline+"Name: "+name +newline+"City: "+ city+newline+"State: "+state+newline+"Status: " +status+newline+"Pin Code: "+ pinCode);
 	}
 
 }

@@ -19,19 +19,21 @@ public class Operation {
 			switch (choice) {
 			case 1:
 				add();
+				System.out.println(newline+"Main Menu");
 				System.out.println(mainMenu);
 				choice = sc.nextInt();
 				break;
 			case 2:
 				update();
+				System.out.println(newline+"Main Menu");
 				System.out.println(mainMenu);
 
 				choice = sc.nextInt();
 				break;
 			case 3:
 				search();
+				System.out.println(newline+"Main Menu");
 				System.out.println(mainMenu);
-
 				choice = sc.nextInt();
 				break;
 			default:
@@ -52,6 +54,7 @@ public class Operation {
 		if(map != null && !map.isEmpty()) {
 			if (map.containsKey(adhar)) {
 				PatientDetails p = map.get(adhar);
+				System.out.println("Patient Details");
 				System.out.println(p);
 
 			} else {
