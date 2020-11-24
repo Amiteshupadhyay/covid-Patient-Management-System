@@ -11,7 +11,7 @@ public class Operation {
 
 	public static void main(String[] args) {
 		String newline = System.lineSeparator();
-		String mainMenu = "1.Add" + newline + "2.Update" + newline + "3.Search";
+		String mainMenu = "Press 1:Add" + newline + "Press 2:Update" + newline + "Press 3:Search"+newline+"Press 0: Exit";
 		System.out.println(mainMenu);
 		int choice = sc.nextInt();
 
